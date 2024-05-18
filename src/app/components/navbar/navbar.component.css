@@ -1,0 +1,78 @@
+.main__navbar {
+  width: 100%;
+  display: flex;
+  height: auto;
+  background-color: #1cbb9b;
+  justify-content: space-between;
+}
+
+.main__navbar > svg {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+
+.main__navbar > div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 300px;
+}
+
+.main__navbar input[type="text"] {
+  /*width: calc(50% - 22px);*/
+  width: 350px;
+  height:40px;
+  outline: none;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  border-radius: 2px;
+  color: #333;
+  font-size:0.8rem;
+  -webkit-transition:all 0.1s linear;
+  -moz-transition:all 0.1s linear;
+  transition:all 0.1s linear;
+}
+.main__navbar input:focus{
+  border-color: #358efb;
+}
+
+/*<!-- HTML !-->*/
+/*<button class="button-9" role="button">Button 9</button>*/
+
+   /* CSS */
+ .button-9 {
+     backface-visibility: hidden;
+     background-color: #405cf5;
+     border-radius: 6px;
+     border-width: 0;
+     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+     box-sizing: border-box;
+     color: #fff;
+     cursor: pointer;
+     font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+     font-size: 100%;
+     height: 44px;
+     line-height: 1.15;
+     outline: none;
+     overflow: hidden;
+     padding: 0 25px;
+     position: relative;
+     text-align: center;
+     text-transform: none;
+     transform: translateZ(0);
+     transition: all .2s,box-shadow .08s ease-in;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+     width: 100%;
+ }
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}

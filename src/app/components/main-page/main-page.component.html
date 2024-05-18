@@ -1,0 +1,42 @@
+<div class="main__hotels">
+  <app-navbar (hotelsLoaded)="onHotelsLoaded($event)"></app-navbar>
+
+  <div class="hotels">
+    <div *ngFor="let hotel of hotels" class="hotel">
+      <h3 (click)="toggleExpand(hotel.id)">{{ hotel.name }}</h3>
+      <div *ngIf="expandedHotelId === hotel.id" class="rooms">
+        <div *ngFor="let room of hotel.rooms" class="room">
+          <p>Room Number: {{ room.roomNumber }}</p>
+          <p>Type: {{ room.type }}</p>
+          <p>Price: {{ room.price }}</p>
+          <p>Available: {{ room.isAvailable ? 'Yes' : 'No' }}</p>
+          <div class="review" *ngIf="isTextBoxVisible && room.roomNumber === selectedRoom">
+            <textarea rows="5" cols="50" [(ngModel)]="reviews" placeholder="Introdu textul aici"></textarea>
+            <button class="button-20" (click)="submitReview(room.roomNumber,hotel.id)">Submit review</button>
+          </div>
+          <div class="buttons">
+            <button class="button-20" (click)="bookRoom(room.roomNumber,hotel.id)">Book</button>
+            <button class="button-20" (click)="cancelBooking(room.roomNumber,hotel.id)">Cancel Booking</button>
+            <button class="button-20" (click)="leaveReview(room.roomNumber)">Leave Review</button>
+            <button class="button-20" >See Review's (todo)</button>
+<!--            <mat-form-field appearance="fill">-->
+<!--              <mat-label>Date</mat-label>-->
+<!--              <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">-->
+<!--              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--              <mat-datepicker #picker></mat-datepicker>-->
+<!--            </mat-form-field>-->
+
+            <mat-form-field appearance="fill">
+              <mat-label>Time</mat-label>
+              <input matInput [ngxTimepicker]="timepicker" [(ngModel)]="selectedTime" readonly>
+              <ngx-material-timepicker #timepicker></ngx-material-timepicker>
+            </mat-form-field>
+
+<!--            <button mat-raised-button (click)="submit()">Submit</button>-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="login-box">
+    <div class="lb-header">
+      <a  [ngClass]="{ 'active': logInForm}" id="login-box-link" (click)="changeLogInForm(true)">Login</a>
+      <a [ngClass]="{ 'active': !logInForm}"  id="signup-box-link" (click)="changeLogInForm(false)">Sign Up</a>
+    </div>
+    <form *ngIf="logInForm" class="email-login">
+      <div class="u-form-group">
+        <input type="email" name="email" placeholder="Email" [(ngModel)]="credentials.email" />
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="credentials.password"/>
+      </div>
+      <div class="u-form-group">
+        <button (click)="logIn()">Log in</button>
+      </div>
+    </form>
+    <form *ngIf="!logInForm" class="email-signup">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email" name="email" [(ngModel)]="registerData.email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="text" placeholder="Name" name="name" [(ngModel)]="registerData.name"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="registerData.password" />
+      </div>
+      <div class="u-form-group">
+        <button (click)="register()">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
